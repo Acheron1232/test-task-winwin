@@ -45,10 +45,13 @@ Example API Requests
    curl -X POST "http://localhost:8081/api/transform" \
    -H "Content-Type: text/plain" \
    -d 'asd21124{}sad'
-   Note: Replace <YOUR_TOKEN> with the JWT token received from the login endpoint.
+   
 
 
 Notes
+
+Note: Replace <YOUR_TOKEN> with the JWT token received from the login endpoint.
+
 Make sure Docker is installed and running before executing docker-compose up.
 
 All services must be assembled before starting Docker Compose.
