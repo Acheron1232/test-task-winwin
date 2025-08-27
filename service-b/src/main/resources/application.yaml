@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: service-b
+
+  config:
+    import:     # it recognizes .env files
+      - optional:file:service-b/.env[.properties]
+      - optional:file:.env[.properties]
+
+header_secret: ${INTERNAL_TOKEN}
+server:
+  port: 8081
