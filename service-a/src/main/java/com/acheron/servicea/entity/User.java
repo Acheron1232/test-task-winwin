@@ -15,13 +15,13 @@ import java.util.*;
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     private String email;
+
     @ToString.Exclude
     @JsonIgnore
     private String password;
@@ -33,6 +33,15 @@ public class User implements UserDetails {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return Objects.equals(getId(), user.getId()) && Objects.equals(getEmail(), user.getEmail()) && Objects.equals(getPassword(), user.getPassword()) && getRole() == user.getRole();
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", role=" + role +
+                '}';
     }
 
     @Override

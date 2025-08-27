@@ -32,7 +32,6 @@ public class AuthenticationService {
         log.info("Authentication successful for email: {}", authDto.email());
 
         String token = jwtUtil.generateToken(user);
-        log.debug("Generated JWT token for {}: {}", authDto.email(), token);
 
         return ResponseEntity.ok(token);
     }
